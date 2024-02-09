@@ -1,12 +1,93 @@
-<html>
+<html lang="en">
 <head>
     <title>RPG</title>
     <script src=https://code.jquery.com/jquery-3.6.0.min.js></script>
     <link href="/css/my.css" rel="stylesheet">
+    <script defer src="/html/my.js"></script>
 </head>
 <body>
 <h1>RPG admin panel</h1>
 <h2>Accounts list:</h2>
+
+<div class="accounts-per-page-wrapper">
+<label for="accounts-per-page">Count per page:</label>
+<select class="accounts-per-page" id="accounts-per-page">
+    <!-- Додаємо автоматично -->
+</select>
+</div>
+
+<table class="players-table">
+    <thead>
+    <tr class="player-table-row">
+        <th class="header-cell cell-small" >#</th>
+        <th class="header-cell" >Name</th>
+        <th class="header-cell" >Title</th>
+        <th class="header-cell" >Race</th>
+        <th class="header-cell" >Profession</th>
+        <th class="header-cell" >Level</th>
+        <th class="header-cell" >Birthday</th>
+        <th class="header-cell" >Banned</th>
+        <th class="header-cell cell-small" >Edit</th>
+        <th class="header-cell cell-small" >Delete</th>
+    </tr>
+    </thead>
+    <tbody class="player-table-body">
+    <!-- Додаємо автоматично -->
+    </tbody>
+</table>
+
+
+<div class="pagination-wrapper" >
+    <span> Pages:</span>
+    <span class="pagination-buttons" ></span>
+
+    <!-- Додаємо автоматично кнопки-->
+</div>
+
+
+<form class="createAccountForm" id="createAccountForm">
+    <h3>Create a new account</h3>
+
+    <div class="create-field" >
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required minlength="1" maxlength="12">
+    </div>
+    <div class="create-field" >
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required minlength="1" maxlength="30">
+    </div>
+    <div class="create-field" >
+        <label for="race">Race:</label>
+        <select id="race" name="race">
+            <option value="HUMAN">Human</option>
+            <option value="DWARF">Dwarf</option>
+            <option value="ELF">Elf</option>
+            <!-- Додайте інші значення відповідно до вашого API -->
+        </select>
+    </div>
+    <div class="create-field" >
+        <label for="profession">Profession:</label>
+        <select id="profession" name="profession">
+            <option value="WARRIOR">Warrior</option>
+            <option value="ROGUE">Rogue</option>
+            <option value="SORCERER">Sorcerer</option>
+            <!-- Додайте інші значення відповідно до вашого API -->
+        </select>
+    </div>
+    <div class="create-field" >
+        <label for="level">Level:</label>
+        <input type="number" id="level" name="level" min="0" max="100">
+    </div>
+    <div class="create-field" >
+        <label for="birthday">Birthday:</label>
+        <input type="date" id="birthday" name="birthday">
+    </div>
+    <div class="create-field" >
+        <label for="banned">Banned:</label>
+        <input type="checkbox" id="banned" name="banned">
+    </div>
+    <button class="create-button" type="submit">Create an account</button>
+</form>
 
 </body>
 </html>
